@@ -1,0 +1,84 @@
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #ed83cd, #ab48e9);
+    color: rgb(14, 14, 14);
+  }
+  
+  .container {
+    width: 40vmin;
+    height: 40vmin;
+    display: grid;
+    place-content: center;
+    padding: 20px;
+    text-align: center;
+    background: #c804d6;
+    border-radius: 10px;
+    display: grid;
+    place-content: center;
+    color: rgb(13, 12, 12);
+  
+    --border-angle: 0turn;
+    --main-bg: conic-gradient(from var(--border-angle),
+        rgb(233, 149, 215),
+        rgb(244, 94, 206) 5%,
+        rgb(241, 37, 227) 60%,
+        rgb(244, 145, 204) 95%);
+  
+    border: solid 5px transparent;
+    border-radius: 2em;
+    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, rgb(181, 22, 221), rgb(170, 31, 122) 99%, transparent);
+  
+    background:
+      var(--main-bg) padding-box,
+      var(--gradient-border) border-box,
+      var(--main-bg) border-box;
+  
+    background-position: center center;
+  
+    animation: bg-spin 3s linear infinite;
+  }
+  
+  @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+  
+  &:hover {
+    animation-play-state: paused;
+  }
+  @property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fas {
+    font-size: 2rem;
+    animation: fas-anime 3s linear infinite alternate;
+  }
+  
+  @keyframes fas-anime {
+    from {
+      transform: scale(1.1);
+    }
+  
+    to {
+      transform: scale(1.5);
+    }
+  }
+  
