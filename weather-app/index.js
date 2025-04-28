@@ -9,8 +9,8 @@ app.use(express.static('public'));
 // Endpoint to get weather data
 app.get('/weather', async (req, res) => {
     const city = req.query.city || 'jaipur';
-    const apiKey = 'e076f537d8deda9d4f4d4ff93a4503a3';
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const apiKey = 'key api';
+    const url = `weather api`;
 
     try {
         const response = await axios.get(url);
